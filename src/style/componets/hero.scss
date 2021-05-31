@@ -1,0 +1,133 @@
+@import "../mixins-and-variables/mixins";
+@import "../mixins-and-variables/variables";
+
+.hero__container {
+	width: 100%;
+	min-width: 280px;
+}
+
+.hero__carousel {
+	height: 700px;
+	position: relative; //relative for carousel left and right button
+	overflow: hidden;
+}
+
+.hero__slider {
+	display: flex;
+	height: 100%;
+	transition: $mainTransition;
+}
+
+.hero__slider section {
+	position: relative; //relative for one specific hero item
+	img {
+		height: 100%;
+		object-fit: cover;
+		z-index: -10;
+	}
+}
+
+//style left section of the slider
+
+.hero-item-about {
+	position: absolute; //absolute towards one section of the carousel
+	// background: darkgreen;
+	max-width: $fullWidth;
+	min-width: $minWidth;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 99;
+	color: $mainWhite;
+	.hero__left-container-about {
+		// background: darkorange;
+		position: absolute;
+		width: 300px;
+		top: 30%;
+		left: 5%;
+		z-index: 99;
+
+		h2 {
+			line-height: 35px;
+		}
+
+		button {
+			padding: 10px 30px;
+			border: none;
+			font-size: $fontM;
+			color: $mainWhite;
+			font-weight: 700;
+			cursor: pointer;
+			transition: $mainTransition;
+			background: $primaryColor;
+		}
+		button:hover {
+			background: $primaryDarkColor;
+		}
+		.decimals {
+			font-size: 0.6em;
+			font-weight: normal;
+			vertical-align: baseline;
+			top: -0.4em;
+			position: relative;
+		}
+	}
+}
+
+//buttons for carousel
+.hero__controls {
+	position: absolute; //absolute towards whole carousel
+	// background: darkcyan;
+	max-width: $fullWidth;
+	min-width: $minWidth;
+	top: 35%;
+	left: 0;
+	right: 0;
+	bottom: 55%;
+	margin: auto;
+	z-index: 200;
+	.hero__arrow {
+		position: absolute;
+		top: 20%;
+		cursor: pointer;
+		z-index: 1000; //always at the top
+	}
+	button {
+		top: 50%;
+		background: none;
+		border-radius: 50%;
+		padding: 10px;
+		border: 1px solid $lightGrey;
+		img {
+			width: 30px;
+			height: 30px;
+			color: $mainWhite;
+		}
+	}
+}
+
+.hero__left-a {
+	right: 120px;
+	display: none;
+}
+.hero__right-a {
+	right: 50px;
+}
+
+//================================================================//
+// ---------------------------FOR MOBILE--------------------------//
+//================================================================//
+
+@media (max-width: $mobileWidth) {
+	.hero__controls {
+		top: 85%;
+		bottom: 5%;
+	}
+	.hero-item-about {
+		.hero__left-container-about {
+			top: 10%;
+		}
+	}
+}

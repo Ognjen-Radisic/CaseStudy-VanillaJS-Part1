@@ -1,0 +1,222 @@
+@import "../mixins-and-variables/mixins";
+@import "../mixins-and-variables/variables";
+
+.tab-classes {
+	background-color: $primaryDarkColor;
+}
+
+.tab-classes__container {
+	@include container();
+	@include flexVariant(space-between);
+	flex-direction: column;
+	padding: 30px 20px;
+
+	//for accesibility optimization it should be h2 in markup
+	h4 {
+		color: $primaryLightColor;
+		font-size: $fontXXL;
+	}
+}
+
+//===========================TOP CONTAINER==================================//
+.tab-classes__text-container {
+	@include flexVariant(space-between);
+	flex-direction: column;
+	max-width: 570px;
+	min-width: 250px;
+	width: 100%;
+	margin: 0 auto;
+	margin-bottom: 40px;
+	text-align: center;
+	p {
+		color: $mainWhite;
+		margin-bottom: 0;
+	}
+	.tab-classes__above-title-paragraph {
+		font-size: $fontS;
+	}
+}
+
+.tab-classes__above-title-paragraph {
+	text-transform: uppercase;
+}
+
+//==========================================================================//
+
+//===========================MID CONTAINER==================================//
+
+.tab-classes__mid-container {
+	@include flexVariant(flex-end);
+	padding-bottom: 15px;
+	width: 100%;
+	p {
+		color: $primaryLightColor;
+		margin-bottom: 0;
+		border-bottom: 2px dashed $primaryLightColor;
+		cursor: pointer;
+		transition: $mainTransition;
+	}
+	p:hover {
+		color: $mainWhite;
+		border-bottom: 2px dashed $mainWhite;
+	}
+}
+
+//==========================================================================//
+
+//======================BOTTOM CONTAINER / TABS=============================//
+
+.tab-classes__bottom-container {
+	width: 100%;
+	background-color: $mainWhite;
+}
+
+.tab-classes__unordered-list {
+	background-color: $lightGrey;
+	@include flexVariant(space-around);
+	li {
+		width: 33.33%;
+		height: 60px;
+		border-left: 1px solid $mainGrey;
+		cursor: pointer;
+	}
+	li:first-child {
+		border-left: none;
+	}
+}
+
+.tab-classes__list-item {
+	a {
+		@include flexVariant(center);
+		width: 100%;
+		height: 100%;
+		color: $darkGrey;
+		font-weight: 400;
+		font-size: $fontL;
+	}
+}
+
+.tab-classes__list-item.active {
+	background-color: $mainWhite;
+	a {
+		color: $primaryColor;
+		font-weight: 700;
+		border-top: 4px solid $primaryLightColor;
+		padding-bottom: 4px;
+	}
+}
+
+.tab-classes__primary {
+	color: $primaryColor;
+	white-space: nowrap;
+}
+.tab-classes__secondary {
+	color: $darkGrey;
+	font-weight: 400;
+	white-space: nowrap;
+}
+
+//==========================================================================//
+
+//===================BOTTOM CONTAINER / TAB-CONTENT=========================//
+
+.tab-classes__tab-pane.active {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	height: 250px;
+	img {
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+	}
+}
+
+.tab-classes__tab-pane {
+	display: none;
+}
+
+.tab-classes__image-container {
+	@include flexVariant(center);
+}
+
+.tab-classes__include-text {
+	@include flexVariant(flex-start);
+	padding-top: 40px;
+}
+
+.tab-classes__include-text__left-container {
+	margin-right: 50px;
+}
+
+.tab-classes__span-img {
+	padding-right: 7px;
+	display: inline-block;
+	img {
+		width: 20px !important;
+		height: 20px !important;
+		margin-bottom: -3px !important;
+	}
+}
+//==========================================================================//
+
+//===================MOBILE CONTAINER-VISIBLE BELOW 600px===================//
+
+.tab-classes__bottom-container-mobile {
+	display: none;
+
+	article {
+		display: grid;
+		grid-template-rows: 1fr 0.3fr 4fr;
+		padding: 20px 25px;
+		@include mobileContainer();
+		background-color: $mainWhite;
+		border-top: 5px solid $primaryColor;
+		img {
+			width: 75px;
+			height: 75px;
+			border-radius: 50%;
+		}
+		h5 {
+			text-align: center;
+			margin: 5px 0 20px 0;
+			color: $primaryColor;
+		}
+		h6 {
+			margin-bottom: 5px;
+			font-weight: 500;
+		}
+		.tab-classes__span-img {
+			padding-right: 7px;
+			display: inline-block;
+			img {
+				width: 15px !important;
+				height: 15px !important;
+				margin-bottom: -3px !important;
+			}
+		}
+	}
+}
+//==========================================================================//
+
+@media (max-width: $mobileWidth) {
+	//for accesibility optimization it should be h2 in markup
+	.tab-classes__container {
+		h4 {
+			font-size: $fontXL;
+		}
+	}
+	.tab-classes__mid-container {
+		@include flexVariant(center);
+	}
+	.tab-classes__bottom-container {
+		display: none;
+	}
+	.tab-classes__bottom-container-mobile {
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+		row-gap: 20px;
+		img {
+			height: 150px;
+		}
+	}
+}

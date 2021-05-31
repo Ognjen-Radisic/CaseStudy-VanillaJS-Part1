@@ -1,0 +1,140 @@
+@import "../mixins-and-variables/mixins";
+@import "../mixins-and-variables/variables";
+
+nav {
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	width: 100%;
+	background-color: $mainWhite;
+	-webkit-box-shadow: 0 8px 6px -5px rgba(126, 126, 126, 0.2);
+	-moz-box-shadow: 0 8px 6px -5px rgba(126, 126, 126, 0.2);
+	box-shadow: 0 8px 6px -5px rgba(126, 126, 126, 0.2);
+
+	//select menu for switching currency
+	select {
+		padding: 0 5px;
+		height: 100%;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		background-color: $mainWhite;
+		color: $primaryDarkColor;
+	}
+}
+.nav__container {
+	@include flexVariant(space-between);
+	@include container();
+}
+
+.nav__left-container-logo {
+	width: 10%;
+	padding: 15px 20px;
+	cursor: pointer;
+	img {
+		// max-width: 70px;
+		// max-height: 70px;
+		// min-width: 40px;
+		// min-height: 40px;
+		width: 50px;
+		height: 50px;
+	}
+}
+
+.nav__right-container {
+	@include flexVariant(space-between);
+	width: 90%;
+	padding: 0 20px;
+}
+
+.nav__menu {
+	@include flexVariant(flex-start);
+	width: 50%;
+	gap: $bigGap;
+	font-size: $fontL;
+	font-weight: 600;
+	li {
+		white-space: nowrap;
+	}
+}
+
+.nav__top {
+	@include flexVariant(flex-end);
+	width: 50%;
+	gap: $mediumGap;
+	font-size: $fontS;
+	font-weight: 400;
+	white-space: nowrap;
+	margin-top: 5px;
+}
+
+.nav__login {
+	padding: 0px 15px;
+	border-right: 2px solid $lightGrey;
+	cursor: pointer;
+	color: $primaryDarkColor;
+}
+
+.nav__flag {
+	@include flexVariant(center);
+	img {
+		width: 19px;
+		height: 19px;
+	}
+}
+
+.nav__land {
+	@include flexVariant(center);
+	cursor: pointer;
+	.nav__full-text {
+		color: $primaryDarkColor;
+		margin-left: 10px;
+	}
+}
+
+.nav-item {
+	a {
+		color: $primaryColor;
+		transition: $mainTransition;
+	}
+}
+
+.nav-item:hover {
+	a {
+		color: $primaryLightColor;
+	}
+}
+
+//================================================================//
+// ---------------------------FOR MOBILE--------------------------//
+//================================================================//
+
+@media (max-width: $mobileWidth) {
+	.nav__left-container-logo {
+		width: 20%;
+	}
+	.nav__right-container {
+		@include flexVariant(space-around);
+		width: 80%;
+		align-items: flex-end;
+		flex-direction: column-reverse;
+		gap: $smallGap;
+		padding: 0;
+		margin: 10px 10px;
+	}
+	.nav__menu {
+		@include flexVariant(flex-end);
+		width: 100%;
+		gap: $mediumGap;
+		font-size: $fontM;
+	}
+	.nav__top {
+		margin-top: 0px;
+	}
+	.nav__land {
+		.nav__full-text {
+			display: none;
+		}
+	}
+}

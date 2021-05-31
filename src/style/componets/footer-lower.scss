@@ -1,0 +1,95 @@
+@import "../mixins-and-variables/mixins";
+@import "../mixins-and-variables/variables";
+
+.footer-lower {
+	border-bottom: 10px solid $primaryLightColor;
+}
+
+.footer-lower__container {
+	@include flexVariant(space-between);
+	max-width: 1400px;
+	min-width: $minWidth;
+	width: 100%;
+	margin: 0 auto;
+	padding: 20px;
+	// background-color: greenyellow;
+	img {
+		width: 40px;
+		height: 30px;
+		cursor: pointer;
+	}
+}
+
+.footer-lower__title {
+	display: none;
+	h2 {
+		font-size: $fontM;
+		font-weight: 500;
+		color: $primaryColor;
+	}
+}
+
+.footer-lower__social {
+	display: none;
+	margin-bottom: 20px;
+}
+.footer-lower__social-container {
+	display: none;
+	img {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.footer-lower__payments {
+	@include flexVariant(center);
+}
+.footer-lower__terms-of-use {
+	@include flexVariant(center);
+	gap: 20px;
+	a {
+		font-size: $fontS;
+		color: $darkGrey;
+		cursor: pointer;
+	}
+}
+
+// SVG circles and social network images
+.footer-lower__svg-circle {
+	@include svgCircle();
+	circle {
+		stroke: rgba($color: #9c9c9c, $alpha: 0.5);
+	}
+}
+.footer-lower__social-icon-and-circle-container {
+	position: relative;
+	width: 52px;
+	height: 52px;
+}
+.footer-lower__social-icon-content {
+	@include centerAbsolute();
+}
+
+//================================================================//
+// --------------------FOR TABLET & MOBILE------------------------//
+//================================================================//
+
+@media (max-width: 1100px) {
+	.footer-lower__container {
+		@include flexVariant(center);
+		flex-direction: column;
+	}
+	.footer-lower__title {
+		display: block;
+	}
+	.footer-lower__social {
+		display: block;
+	}
+	.footer-lower__social-container {
+		@include flexVariant(center);
+		gap: 5px;
+	}
+	.footer-lower__payments {
+		margin-bottom: 20px;
+	}
+}

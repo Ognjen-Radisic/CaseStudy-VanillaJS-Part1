@@ -1,0 +1,164 @@
+@import "../mixins-and-variables/mixins";
+@import "../mixins-and-variables/variables";
+
+.offers {
+	background-color: $primaryColor;
+}
+
+.offers__container {
+	@include container();
+	@include flexVariant(space-between);
+	flex-direction: column;
+	padding: 50px 20px;
+}
+
+.offers__paragraph-title {
+	width: 100%;
+	color: $mainWhite;
+	text-align: start;
+	padding-bottom: 15px;
+}
+.offers__grid-container {
+	display: grid;
+	grid-template-columns: repeat(4, 260px);
+	column-gap: 30px;
+	row-gap: 20px;
+}
+
+///overlay 3h left
+//ligth yellow with text
+.offers__grid-container article:nth-child(1)::after {
+	position: absolute;
+	top: 20px;
+	left: -11.75px;
+	padding: 5px 10px;
+	content: "3h left at this rate";
+	font-weight: 700;
+	color: $primaryColor;
+	background-color: $overlayColor;
+}
+
+//dark triangle to imitate depth
+.offers__grid-container article:nth-child(1)::before {
+	position: absolute;
+	top: 52px;
+	left: -12px;
+	height: 0px;
+	width: 0px;
+	content: "";
+	border-top: 6px solid $overlayColorDark;
+	border-bottom: 6px solid transparent;
+	border-left: 6px solid transparent;
+	border-right: 6px solid $overlayColorDark;
+}
+
+.offers__card-container {
+	position: relative;
+	width: 260px;
+	height: 300px;
+	background-color: $mainWhite;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	img {
+		height: 150px;
+		object-fit: cover;
+	}
+	h4 {
+		color: $primaryDarkColor;
+		margin: 0;
+	}
+	p {
+		color: $primaryDarkColor;
+		margin-bottom: 40px;
+	}
+}
+.offers__offer-text {
+	padding: 20px;
+	button {
+		color: $primaryColor;
+		border: none;
+		font-size: $fontM;
+		font-weight: 800;
+		cursor: pointer;
+		transition: $mainTransition;
+		background: none;
+	}
+	button:hover {
+		color: $primaryLightColor;
+		.svg-icon {
+			right: -2px;
+		}
+	}
+	//svg greater sign
+	.svg-icon {
+		@include svgConfig();
+	}
+}
+
+//================================================================//
+// ---------------------------FOR TABLET--------------------------//
+//================================================================//
+
+@media (max-width: 1190px) {
+	.offers__grid-container {
+		grid-template-columns: repeat(2, 350px);
+		column-gap: 20px;
+	}
+	.offers__card-container {
+		width: 350px;
+		height: 350px;
+		grid-template-rows: 3fr 2fr;
+		img {
+			height: 200px;
+		}
+		h4 {
+			font-size: $fontL;
+		}
+	}
+}
+
+@media (max-width: 750px) {
+	.offers__grid-container {
+		grid-template-columns: repeat(1, 400px);
+		column-gap: 20px;
+	}
+	.offers__card-container {
+		width: 400px;
+		height: 350px;
+		grid-template-rows: 3fr 2fr;
+		img {
+			height: 200px;
+		}
+		h4 {
+			font-size: $fontXL;
+		}
+		p {
+			margin-bottom: 30px;
+		}
+	}
+	.offers__paragraph-title {
+		font-size: $fontXXL;
+		text-align: center;
+	}
+}
+
+@media (max-width: $mobileWidth) {
+	.offers__grid-container {
+		grid-template-columns: repeat(1, 230px);
+		column-gap: 20px;
+	}
+	.offers__card-container {
+		@include mobileContainer();
+		grid-template-rows: 1fr 1fr;
+		img {
+			height: 150px;
+		}
+		h4 {
+			font-size: $fontM;
+		}
+	}
+	.offers__paragraph-title {
+		font-size: $fontXL;
+		text-align: center;
+	}
+}

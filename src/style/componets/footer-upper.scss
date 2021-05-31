@@ -1,0 +1,147 @@
+@import "../mixins-and-variables/mixins";
+@import "../mixins-and-variables/variables";
+.footer-upper {
+	background-color: $primaryColor;
+}
+
+.footer-upper__container {
+	@include flexVariant(space-between);
+	max-width: 1400px;
+	min-width: $minWidth;
+	width: 100%;
+	margin: 0 auto;
+	padding: 35px 20px;
+	// background-color: greenyellow;
+	img {
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+	}
+	h4 {
+		color: $mainWhite;
+		margin-bottom: 10px;
+		font-size: $fontL;
+		font-weight: 400;
+	}
+}
+
+.footer-upper__left-section {
+	@include flexVariant(center);
+	gap: 20px;
+}
+.footer-upper__input-element {
+	margin-bottom: 5px;
+	@include flexVariant(center);
+	gap: 20px;
+	border-bottom: 1px solid $mainWhite;
+	input {
+		background-color: transparent;
+		border: none;
+		// border-bottom: 1px solid $mainWhite;
+		color: $mainWhite;
+		padding: 5px;
+		transition: $mainTransition;
+		width: 280px;
+	}
+	button {
+		color: $mainWhite;
+		border: none;
+		font-size: $fontM;
+		font-weight: 400;
+		cursor: pointer;
+		transition: $mainTransition;
+		background: none;
+		margin-bottom: 3px;
+	}
+	button:hover {
+		color: $primaryLightColor;
+		.svg-icon {
+			right: -2px;
+		}
+	}
+	//svg greater sign
+	.svg-icon {
+		@include svgConfig();
+	}
+}
+
+//input tag modifications
+textarea:focus,
+input:focus {
+	outline: none;
+}
+input:focus::placeholder {
+	color: transparent;
+}
+::-webkit-input-placeholder {
+	color: rgba($color: $mainGrey, $alpha: 0.4);
+}
+
+.footer-upper__right-section {
+	@include flexVariant(center);
+	gap: 20px;
+}
+
+.footer-upper__social-container {
+	@include flexVariant(center);
+	gap: 10px;
+	margin-bottom: 10px;
+}
+
+// SVG circles and social network images
+.footer-upper__svg-circle {
+	@include svgCircle();
+	circle {
+		stroke: rgba($color: $mainGrey, $alpha: 0.5);
+	}
+}
+.footer-upper__social-icon-and-circle-container {
+	position: relative;
+	width: 52px;
+	height: 52px;
+}
+.footer-upper__social-icon-content {
+	@include centerAbsolute();
+}
+
+//================================================================//
+// --------------------FOR TABLET & MOBILE------------------------//
+//================================================================//
+
+@media (max-width: 1100px) {
+	.footer-upper__container {
+		@include flexVariant(center);
+		text-align: center;
+	}
+	.footer-upper__left-section {
+		flex-direction: column;
+	}
+	.footer-upper__right-section {
+		display: none;
+	}
+	.footer-upper__input-element {
+		flex-direction: column;
+		border-bottom: none;
+		input {
+			border-bottom: 1px solid $mainWhite;
+		}
+		button {
+			padding: 5px 100px;
+			border: none;
+			font-size: $fontM;
+			color: $primaryColor;
+			font-weight: 700;
+			cursor: pointer;
+			transition: $mainTransition;
+			background: $mainWhite;
+		}
+		button:hover {
+			// color: $primaryLightColor;
+			background-color: $primaryLightColor;
+			color: $mainWhite;
+		}
+		.svg-icon {
+			display: none;
+		}
+	}
+}

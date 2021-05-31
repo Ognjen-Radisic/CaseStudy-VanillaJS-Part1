@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Author: Ognjen Radisic, Part1, Case study
+		in 2 parts, Make the same project in VanillaJS only(part1), make project
+		with react.js(part2)"
+		/>
+		<link rel="preload" as="image" href="./assets/picture-beach-chill.jpg" />
+		<title>ProjectX - VanillaJS</title>
+	</head>
+	<body>
+		<!-- NAVBAR -->
+		<nav class="nav">
+			<div class="nav__container">
+				<a class="nav__left-container-logo" href="#home">
+					<img src="./assets/icon-logo.svg" alt="logo" />
+				</a>
+
+				<section class="nav__right-container">
+					<ul class="nav__menu">
+						<li class="nav-item">
+							<a href="#info" class="nav-link">Info</a>
+						</li>
+						<li class="nav-item">
+							<a href="#aboutUs" class="nav-link">About us</a>
+						</li>
+						<li class="nav-item">
+							<a href="#contact" class="nav-link">Contact</a>
+						</li>
+					</ul>
+
+					<section class="nav__top">
+						<a href="#login" class="nav__login">LOGIN</a>
+						<div class="nav__land">
+							<a href="#country" class="nav__flag">
+								<img src="./assets/icon-united-kingdom.svg" alt="country" />
+								<span class="nav__full-text">EN - UK</span>
+							</a>
+
+							<select class="nav__options-menu">
+								<option value="pound">( £ )</option>
+								<option value="dolar">( $ )</option>
+								<option value="euro">( € )</option>
+							</select>
+						</div>
+					</section>
+				</section>
+			</div>
+		</nav>
+
+		<!-- HERO -->
+
+		<div class="hero__container">
+			<div class="hero__carousel">
+				<div class="hero__slider">
+					<!-- ONE ITEM EXAMPLE -->
+					<!-- <section class="hero-item">
+							<img src="./assets/picture-japan.jpg" alt="carousel-slide"/>
+							<img src="./assets/picture-girl-on-beach.jpg" alt="carousel-slide"/>
+							<img src="./assets/picture-beach-chill.jpg" alt="carousel-slide"/>
+							<img src="./assets/picture-peru.jpg" alt="carousel-slide"/>
+							<div class="hero-item-about">
+								<div class="hero__left-container-about">
+									<h2 class="hero__text">Enjoy our hot summer deals</h2>
+									<p class="hero__price">
+										From
+
+										<span class="currency">£</span>
+										69
+										<span class="decimals">.50</span>
+									</p>
+									<button>Book now!</button>
+								</div>
+							</div>
+						</section> -->
+				</div>
+				<div class="hero__controls">
+					<button class="hero__arrow hero__left-a">
+						<img src="./assets/icon-arrow-to-left.svg" alt="prev" />
+					</button>
+					<button class="hero__arrow hero__right-a">
+						<img src="./assets/icon-arrow-to-right.svg" alt="next" />
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- USP -->
+		<div class="usp">
+			<p class="usp__paragraph">Low cost doesn't mean cheap</p>
+			<h3 class="usp__title">Fly smart, fly with Green Earth</h3>
+			<div class="usp__grid-container">
+				<!-- ONE ITEM EXAMPLE -->
+				<!-- <article class="usp__card-grid-container">
+						<div class="usp__image-container">
+							<img src="./assets/usp-icon-seat.svg" alt="usp" />
+							<img src="./assets/usp-icon-foot-massage.svg" alt="usp" />
+							<img src="./assets/usp-icon-friendly-crew.svg" alt="usp" />
+							<img src="./assets/usp-icon-suitecase.svg" alt="usp" />
+						</div>
+						<div>
+							<h3>Reclinable seats</h3>
+							<p>
+								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero,
+								facere quaerat! Perspiciatis nostrum quo obcaecati delectus sit.
+							</p>
+						</div>
+					</article>
+					-->
+			</div>
+		</div>
+
+		<!-- OFFER -->
+		<div class="offers">
+			<div class="offers__container">
+				<p class="offers__paragraph-title">Showing our offers from</p>
+				<div class="offers__grid-container">
+					<!-- ONE ITEM EXAMPLE -->
+					<!-- <article class="offers__card-container">
+							<img src="./assets/offer-london.jpg" alt="offer" />
+							<img src="./assets/offer-lima.jpg" alt="offer" />
+							<img src="./assets/offer-tokyo.jpg" alt="offer" />
+							<img src="./assets/offer-honolulu.jpg" alt="offer" />
+							<div class="offers__offer-text">
+								<h3>London</h3>
+								<p>From £69</p>
+								<button>Book now</button>
+							</div>
+						</article> -->
+				</div>
+			</div>
+		</div>
+
+		<!-- INSPIRATION -->
+		<div class="inspiration">
+			<div class="inspiration__container">
+				<h3 class="inspiration__question">Don't know where to go?</h3>
+				<a href="#offersPage" class="inspiration__answer">
+					<h3>Let us inspire you</h3>
+					<div class="inspiration__line"></div>
+				</a>
+			</div>
+		</div>
+		<!-- TAB-CLASSES -->
+
+		<div class="tab-classes">
+			<div class="tab-classes__container">
+				<div class="tab-classes__text-container">
+					<p class="tab-classes__above-title-paragraph">
+						Quality from the inside
+					</p>
+					<h4 class="tab-classes__title">Travel the way you want</h4>
+					<p class="tab-classes__under-title-paragraph">
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi
+						repudiandae consectetur reprehenderit officiis minima animi
+						assumenda dolor ipsum perferendis nostrum possimus, modi esse
+						doloribus incidunt.
+					</p>
+				</div>
+				<a href="#services" class="tab-classes__mid-container">
+					<p>View all services & upgrades</p>
+				</a>
+
+				<!-- Tabs component -->
+				<div class="tab-classes__bottom-container">
+					<!-- Tabs -->
+					<ul class="tab-classes__unordered-list">
+						<li class="tab-classes__list-item active">
+							<a href="#regular">Regular</a>
+						</li>
+						<li class="tab-classes__list-item">
+							<a href="#plus">Plus</a>
+						</li>
+						<li class="tab-classes__list-item">
+							<a href="#premium">Premium</a>
+						</li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-classes__tab-content">
+						<!-- First TAB -->
+						<!-- <div class="tab-classes__tab-pane  active" id="regular">
+								<div class="tab-classes__image-container">
+									<img src="./assets/tabs-travel-person.jpg" />
+								</div>
+								<div class="tab-classes__include-text">
+									<div class="tab-classes__include-text__left-container">
+										<h4 class="tab-classes__primary">
+											<span class="tab-classes__span-img">
+												<img class="tab-classes__img" src="./assets/tabs-icon-check-mark.svg" alt="symbol"></img>
+											</span>
+											Reclinable seats
+										</h4>
+										<h4 class="tab-classes__primary">
+											<span class="tab-classes__span-img">
+												<img class="tab-classes__img" src="./assets/tabs-icon-check-mark.svg" alt="symbol"></img>
+											</span>
+											1 Hand luggage
+										</h4>
+										<h4 class="tab-classes__primary">
+											<span class="tab-classes__span-img">
+												<img class="tab-classes__img" src="./assets/tabs-icon-check-mark.svg" alt="symbol"></img>
+											</span>
+											Extra leg room
+										</h4>
+										
+									</div>
+									<div class="tab-classes__include-text__right-container">
+										<h4 class="tab-classes__secondary">
+											<span class="tab-classes__span-img">
+												<img class="tab-classes__img" src="./assets/tabs-icon-minus.svg" alt="symbol"></img>
+											</span>
+											Extra cabbin luggage
+										</h4>
+										<h4 class="tab-classes__secondary">
+											<span class="tab-classes__span-img">
+												<img class="tab-classes__img" src="./assets/tabs-icon-minus.svg" alt="symbol"></img>
+											</span>
+											Extra hold luggage
+										</h4>
+										<h4 class="tab-classes__secondary">
+											<span class="tab-classes__span-img">
+												<img class="tab-classes__img" src="./assets/tabs-icon-minus.svg" alt="symbol"></img>
+											</span>
+											Lounge access
+										</h4>
+									</div>
+								</div>
+							</div> -->
+					</div>
+				</div>
+
+				<!-- MOBILE TABS CONTAINER CARDS visible when screen is smaller then 600px -->
+				<div class="tab-classes__bottom-container-mobile">
+					<!-- hero goes cards for tabsMobile from htmlTemplates -->
+				</div>
+			</div>
+		</div>
+
+		<!-- FOOTER UPPER -->
+
+		<footer class="footer-upper">
+			<div class="footer-upper__container">
+				<div class="footer-upper__left-section">
+					<h4>Subscribe to our newsletter</h4>
+					<form class="footer-upper__input-element">
+						<input type="email" placeholder="Enter your email address" />
+						<button type="reset">
+							Send
+							<svg width="24" height="24" class="svg-icon" viewBox="0 0 24 24">
+								<path
+									d="M16.5 13.1L7.6 22c-.8-.8-.8-2 0-2.8l6.1-6.1-6-6.1c-.8-.8-.8-2 0-2.8l8.8 8.9z"
+								/>
+							</svg>
+						</button>
+					</form>
+				</div>
+				<div class="footer-upper__right-section">
+					<h4>Follow us</h4>
+					<div class="footer-upper__social-container">
+						<a
+							href="#facebook"
+							class="footer-upper__social-icon-and-circle-container"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								version="1.1"
+								class="footer-upper__svg-circle"
+							>
+								<circle
+									cx="26"
+									cy="26"
+									r="25"
+									stroke="white"
+									stroke-width="1"
+									fill="none"
+								/>
+							</svg>
+							<img
+								class="footer-upper__img footer-upper__social-icon-content"
+								src="./assets/footer-white-facebook.svg"
+								alt="facebook"
+							/>
+						</a>
+						<a
+							href="#twitter"
+							class="footer-upper__social-icon-and-circle-container"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								version="1.1"
+								class="footer-upper__svg-circle"
+							>
+								<circle
+									cx="26"
+									cy="26"
+									r="25"
+									stroke="white"
+									stroke-width="1"
+									fill="none"
+								/>
+							</svg>
+							<img
+								class="footer-upper__img footer-upper__social-icon-content"
+								src="./assets/footer-white-twitter.svg"
+								alt="twitter"
+							/>
+						</a>
+						<a
+							href="#instagram"
+							class="footer-upper__social-icon-and-circle-container"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								version="1.1"
+								class="footer-upper__svg-circle"
+							>
+								<circle
+									cx="26"
+									cy="26"
+									r="25"
+									stroke="white"
+									stroke-width="1"
+									fill="none"
+								/>
+							</svg>
+							<img
+								class="footer-upper__img footer-upper__social-icon-content"
+								src="./assets/footer-white-instagram.svg"
+								alt="instagram"
+							/>
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- FOOTER LOWER -->
+		<footer class="footer-lower">
+			<div class="footer-lower__container">
+				<div class="footer-lower__title">
+					<h2>Follow us</h2>
+				</div>
+				<div class="footer-lower__social">
+					<div class="footer-lower__social-container">
+						<a
+							href="#facebook"
+							class="footer-lower__social-icon-and-circle-container"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								version="1.1"
+								class="footer-lower__svg-circle"
+							>
+								<circle
+									cx="26"
+									cy="26"
+									r="25"
+									stroke="black"
+									stroke-width="1"
+									fill="none"
+								/>
+							</svg>
+							<img
+								class="footer-lower__img footer-lower__social-icon-content"
+								src="./assets/footer-blue-facebook.svg"
+								alt="facebook"
+							/>
+						</a>
+						<a
+							href="#twitter"
+							class="footer-lower__social-icon-and-circle-container"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								version="1.1"
+								class="footer-lower__svg-circle"
+							>
+								<circle
+									cx="26"
+									cy="26"
+									r="25"
+									stroke="black"
+									stroke-width="1"
+									fill="none"
+								/>
+							</svg>
+							<img
+								class="footer-lower__img footer-lower__social-icon-content"
+								src="./assets/footer-blue-twitter.svg"
+								alt="twitter"
+							/>
+						</a>
+						<a
+							href="#instagram"
+							class="footer-lower__social-icon-and-circle-container"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								version="1.1"
+								class="footer-lower__svg-circle"
+							>
+								<circle
+									cx="26"
+									cy="26"
+									r="25"
+									stroke="black"
+									stroke-width="1"
+									fill="none"
+								/>
+							</svg>
+							<img
+								class="footer-lower__img footer-lower__social-icon-content"
+								src="./assets/footer-blue-instagram.svg"
+								alt="instagram"
+							/>
+						</a>
+					</div>
+				</div>
+				<div class="footer-lower__payments">
+					<img src="./assets/footer-visa.svg" alt="visa" />
+					<img src="./assets/footer-amex.svg" alt="amex" />
+					<img src="./assets/footer-paypal.svg" alt="paypal" />
+				</div>
+				<div class="footer-lower__terms-of-use">
+					<a href="#termsandprivacy">Terms & Privacy</a>
+					<a href="#sitemap">Site Map</a>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

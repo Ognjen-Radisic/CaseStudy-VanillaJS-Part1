@@ -2,6 +2,8 @@
 
 CHECK IT OUT LIVE: https://ognjen-radisic-vanillajs-project.netlify.app/
 
+link to part-2: https://github.com/Ognjen-Radisic/CaseStudy-ReactJS-Part2
+
 In part-1 goal is to make a full project while only using vanilla js (no external ui librariries), html and sass. In part-2 I'll make the same project using React and sass. And we can compare the differences, in app structuring, code readability and simplicity in different aspects of making the same thing in a different way (with different technologies).
 
 ## WEBPACK
